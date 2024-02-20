@@ -3,6 +3,7 @@ import './App.css';
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { fetchTracks } from './lib/fetchTracks';
+import { SavedTrack } from 'spotify-types';
 
 
 
@@ -30,6 +31,8 @@ const App = () => {
   console.log(tracks)
   console.log(tracks?.length)
 
+  if(tracks === undefined || tracks[0]===undefined){return null}
+
   
 
   return (
@@ -40,7 +43,8 @@ const App = () => {
       </header>
       <div className="App-images">
         <p>Choisis parmis {tracks?.length} morceaux</p>
-        <p>Premier titre : {tracks[0]?.track.name}</p>
+        <p>Premier titre : {tracks[0]?.track.name ?? ''}</p>
+        <p><AlbumCover track={tracks[0]} /></p>
       </div>
       <audio src={trackUrls[trackIndex]} autoPlay controls />
       <button onClick={goToNextTrack}>
@@ -54,10 +58,10 @@ const App = () => {
 export default App;
 
 
-const AlbumCover = () =>  {
-  if (tracks != undefined){}
-    const src = tracks[0].album.images[0]; // A changer ;)
-    return (
-        <img src={src} style={{ width: 400, height: 400 }} />
-    );
-  } 
+const AlbumCover = ({track}:{track:SavedTrack}) =>  {
+
+  const src = track.track.album.images[0]?.url; // A changer ;)
+  return (
+      <img src={src} style={{ width: 400, height: 400 }} />
+  );
+}
