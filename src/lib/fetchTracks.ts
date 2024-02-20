@@ -1,4 +1,4 @@
-const apiToken: string = '';
+const apiToken: string = 'BQD7CXePurVvvKP_7tmqYNg8M2rXEsQwn6R-aWuhZ9r3MINJgtM5xfyE8ckh7JlJfLog9zjbBVo5P3qf9C9uJZTNroM6Qwf9SJfTqHxnAjjUpXgtD9XSQ3BL_dHKhUGwAXiALxElM7Ql5fB7ft_qOA0ulWgFakFyshRfShZ1EeE25F5aD2ei7-TkEuATb3zXVgAZCcZaqABdxfvPoYvNWF_Aew';
 
 export const fetchTracks = async () => {
   // This function does nothing, yet

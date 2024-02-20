@@ -1,6 +1,8 @@
 import logo from './assets/logo.svg';
 import './App.css';
 import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { fetchTracks } from './lib/fetchTracks';
 
 
 
@@ -21,6 +23,13 @@ const App = () => {
     setTrackIndex(trackIndex + 1);
   }
 
+  const { data: tracks, isLoading } = useQuery({
+		queryKey: ['tracks'],
+		queryFn: fetchTracks
+  });
+  console.log(tracks)
+  console.log(tracks?.length)
+
   return (
     <div className="App">
       <header className="App-header">
@@ -28,7 +37,7 @@ const App = () => {
         <h1 className="App-title">Bienvenue sur le blind test</h1>
       </header>
       <div className="App-images">
-        <p>Bon bah on va coder ca</p>
+        <p>Choisis parmis {tracks?.length} morceaux</p>
       </div>
       <audio src={trackUrls[trackIndex]} autoPlay controls />
       <button onClick={goToNextTrack}>
