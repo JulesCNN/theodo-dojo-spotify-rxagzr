@@ -43,10 +43,10 @@ const App = () => {
       </header>
       <div className="App-images">
         <p>Choisis parmis {tracks?.length} morceaux</p>
-        <p>Premier titre : {tracks[0]?.track.name ?? ''}</p>
-        <p><AlbumCover track={tracks[0]} /></p>
+        <p>Premier titre : {tracks[trackIndex]?.track.name ?? ''}</p>
+        <p><AlbumCover track={tracks[trackIndex]} /></p>
       </div>
-      <audio src={trackUrls[trackIndex]} autoPlay controls />
+      <audio src={tracks[trackIndex].track.preview_url} autoPlay controls />
       <button onClick={goToNextTrack}>
           Next track
       </button>
