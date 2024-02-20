@@ -30,6 +30,8 @@ const App = () => {
   console.log(tracks)
   console.log(tracks?.length)
 
+  
+
   return (
     <div className="App">
       <header className="App-header">
@@ -50,3 +52,12 @@ const App = () => {
 };
 
 export default App;
+
+
+const AlbumCover = () =>  {
+  if (tracks != undefined){}
+    const src = tracks[0].album.images[0]; // A changer ;)
+    return (
+        <img src={src} style={{ width: 400, height: 400 }} />
+    );
+  } 

@@ -1,6 +1,6 @@
 import { SavedTrack } from 'spotify-types';
 
-const apiToken: string = 'BQD7CXePurVvvKP_7tmqYNg8M2rXEsQwn6R-aWuhZ9r3MINJgtM5xfyE8ckh7JlJfLog9zjbBVo5P3qf9C9uJZTNroM6Qwf9SJfTqHxnAjjUpXgtD9XSQ3BL_dHKhUGwAXiALxElM7Ql5fB7ft_qOA0ulWgFakFyshRfShZ1EeE25F5aD2ei7-TkEuATb3zXVgAZCcZaqABdxfvPoYvNWF_Aew';
+const apiToken: string = 'BQA07f3DHkEd8gL_gFRPPV7-LrHnErNKfPVo3_btorChtQMzkr_zgcYfwpu9Rse7cBo9UAOjEtwRXQoGdeUqXdgyti5vebgAY6fpz0I_xx31uNPb0qUxpxSXIZ1AebQaPanxG8Z1jhtbnSmvuuCFfxTZ427G5ct3Y7PN5VcAHerSdf9RmAmjzyVx7PWnH9luPndZoDF2Yxon4YN-N-dIxOOAeA';
 
 export const fetchTracks = async ():Promise<SavedTrack[]> => {
   // This function does nothing, yet
